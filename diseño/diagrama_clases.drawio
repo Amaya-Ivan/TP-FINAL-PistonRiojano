@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="piston-uml" name="Modelo de clases">
+    <mxGraphModel page="1" pageScale="1" pageWidth="1564" pageHeight="985" grid="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Pistón Riojano | Diagrama de clases UML" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=32;fontStyle=1;">
+          <mxGeometry as="geometry" x="45" y="29" width="1080" height="45" />
+        </mxCell>
+        <mxCell id="package" value="paradigmas.unlar.edu.ar.modelo" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=16;">
+          <mxGeometry as="geometry" x="46" y="76" width="650" height="23" />
+        </mxCell>
+        <mxCell id="Cliente" value="Cliente" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="45" y="142" width="272" height="162" />
+        </mxCell>
+        <mxCell id="Cliente-body-0-0" value="- dni: String" vertex="1" parent="Cliente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Cliente-body-0-1" value="- nombre: String" vertex="1" parent="Cliente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="67" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Cliente-body-0-2" value="- apellido: String" vertex="1" parent="Cliente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="89" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Cliente-body-0-3" value="- telefono: String" vertex="1" parent="Cliente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="111" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Cliente-body-0-4" value="- email: String [0..1]" vertex="1" parent="Cliente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="133" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Vehiculo" value="«abstracta»&#10;Vehiculo" vertex="1" parent="1" style="swimlane;startSize=54;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="401" y="140" width="355" height="192" />
+        </mxCell>
+        <mxCell id="Vehiculo-body-0-0" value="- patente: String" vertex="1" parent="Vehiculo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="61" width="335" height="22" />
+        </mxCell>
+        <mxCell id="Vehiculo-body-0-1" value="- marca: String" vertex="1" parent="Vehiculo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="83" width="335" height="22" />
+        </mxCell>
+        <mxCell id="Vehiculo-body-0-2" value="- modelo: String" vertex="1" parent="Vehiculo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="105" width="335" height="22" />
+        </mxCell>
+        <mxCell id="Vehiculo-body-0-3" value="- anio: int" vertex="1" parent="Vehiculo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="127" width="335" height="22" />
+        </mxCell>
+        <mxCell id="Vehiculo-separator" value="" vertex="1" parent="Vehiculo" style="fillColor=#c0cdd9;strokeColor=none;connectable=0;">
+          <mxGeometry as="geometry" x="0" y="156" width="355" height="1" />
+        </mxCell>
+        <mxCell id="Vehiculo-body-1-0" value="+ coeficienteManoDeObra(): BigDecimal" vertex="1" parent="Vehiculo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="163" width="335" height="22" />
+        </mxCell>
+        <mxCell id="Auto" value="Auto" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="837" y="108" width="332" height="132" />
+        </mxCell>
+        <mxCell id="Auto-body-0-0" value="- cantidadPuertas: int" vertex="1" parent="Auto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="312" height="22" />
+        </mxCell>
+        <mxCell id="Auto-body-0-1" value="- combustible: TipoCombustible" vertex="1" parent="Auto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="67" width="312" height="22" />
+        </mxCell>
+        <mxCell id="Auto-separator" value="" vertex="1" parent="Auto" style="fillColor=#c0cdd9;strokeColor=none;connectable=0;">
+          <mxGeometry as="geometry" x="0" y="96" width="332" height="1" />
+        </mxCell>
+        <mxCell id="Auto-body-1-0" value="+ coeficienteManoDeObra(): BigDecimal" vertex="1" parent="Auto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="103" width="312" height="22" />
+        </mxCell>
+        <mxCell id="Moto" value="Moto" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="837" y="289" width="332" height="110" />
+        </mxCell>
+        <mxCell id="Moto-body-0-0" value="- cilindrada: int" vertex="1" parent="Moto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="312" height="22" />
+        </mxCell>
+        <mxCell id="Moto-separator" value="" vertex="1" parent="Moto" style="fillColor=#c0cdd9;strokeColor=none;connectable=0;">
+          <mxGeometry as="geometry" x="0" y="74" width="332" height="1" />
+        </mxCell>
+        <mxCell id="Moto-body-1-0" value="+ coeficienteManoDeObra(): BigDecimal" vertex="1" parent="Moto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="81" width="312" height="22" />
+        </mxCell>
+        <mxCell id="TipoCombustible" value="«enumeración»&#10;TipoCombustible" vertex="1" parent="1" style="swimlane;startSize=54;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e4f0eb;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="1228" y="108" width="290" height="134" />
+        </mxCell>
+        <mxCell id="TipoCombustible-body-0-0" value="NAFTA" vertex="1" parent="TipoCombustible" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="61" width="270" height="22" />
+        </mxCell>
+        <mxCell id="TipoCombustible-body-0-1" value="DIESEL" vertex="1" parent="TipoCombustible" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="83" width="270" height="22" />
+        </mxCell>
+        <mxCell id="TipoCombustible-body-0-2" value="GNC" vertex="1" parent="TipoCombustible" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="105" width="270" height="22" />
+        </mxCell>
+        <mxCell id="EstadoOrden" value="«enumeración»&#10;EstadoOrden" vertex="1" parent="1" style="swimlane;startSize=54;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e4f0eb;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="1228" y="289" width="290" height="156" />
+        </mxCell>
+        <mxCell id="EstadoOrden-body-0-0" value="PENDIENTE" vertex="1" parent="EstadoOrden" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="61" width="270" height="22" />
+        </mxCell>
+        <mxCell id="EstadoOrden-body-0-1" value="EN_REPARACION" vertex="1" parent="EstadoOrden" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="83" width="270" height="22" />
+        </mxCell>
+        <mxCell id="EstadoOrden-body-0-2" value="FINALIZADA" vertex="1" parent="EstadoOrden" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="105" width="270" height="22" />
+        </mxCell>
+        <mxCell id="EstadoOrden-body-0-3" value="ENTREGADA" vertex="1" parent="EstadoOrden" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="127" width="270" height="22" />
+        </mxCell>
+        <mxCell id="Mecanico" value="Mecanico" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="45" y="480" width="272" height="162" />
+        </mxCell>
+        <mxCell id="Mecanico-body-0-0" value="- legajo: int" vertex="1" parent="Mecanico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Mecanico-body-0-1" value="- nombre: String" vertex="1" parent="Mecanico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="67" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Mecanico-body-0-2" value="- apellido: String" vertex="1" parent="Mecanico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="89" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Mecanico-body-0-3" value="- especialidad: Especialidad" vertex="1" parent="Mecanico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="111" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Mecanico-body-0-4" value="- valorHora: BigDecimal" vertex="1" parent="Mecanico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="133" width="252" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo" value="OrdenTrabajo" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="401" y="474" width="355" height="264" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-0-0" value="- numero: long" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-0-1" value="- fechaIngreso: LocalDate" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="67" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-0-2" value="- descripcionProblema: String" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="89" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-0-3" value="- horasManoDeObra: BigDecimal" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="111" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-0-4" value="- estado: EstadoOrden" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="133" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-separator" value="" vertex="1" parent="OrdenTrabajo" style="fillColor=#c0cdd9;strokeColor=none;connectable=0;">
+          <mxGeometry as="geometry" x="0" y="162" width="355" height="1" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-1-0" value="+ agregarRepuesto(item: Repuesto, cantidad: int): void" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="169" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-1-1" value="+ calcularManoDeObra(): BigDecimal" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="191" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-1-2" value="+ calcularTotal(): BigDecimal" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="213" width="335" height="22" />
+        </mxCell>
+        <mxCell id="OrdenTrabajo-body-1-3" value="+ cambiarEstado(nuevoEstado: EstadoOrden): void" vertex="1" parent="OrdenTrabajo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="235" width="335" height="22" />
+        </mxCell>
+        <mxCell id="DetalleRepuesto" value="DetalleRepuesto" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="837" y="493" width="332" height="132" />
+        </mxCell>
+        <mxCell id="DetalleRepuesto-body-0-0" value="- cantidad: int" vertex="1" parent="DetalleRepuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="312" height="22" />
+        </mxCell>
+        <mxCell id="DetalleRepuesto-body-0-1" value="- precioUnitarioAplicado: BigDecimal" vertex="1" parent="DetalleRepuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="67" width="312" height="22" />
+        </mxCell>
+        <mxCell id="DetalleRepuesto-separator" value="" vertex="1" parent="DetalleRepuesto" style="fillColor=#c0cdd9;strokeColor=none;connectable=0;">
+          <mxGeometry as="geometry" x="0" y="96" width="332" height="1" />
+        </mxCell>
+        <mxCell id="DetalleRepuesto-body-1-0" value="+ calcularSubtotal(): BigDecimal" vertex="1" parent="DetalleRepuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="103" width="312" height="22" />
+        </mxCell>
+        <mxCell id="Repuesto" value="Repuesto" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="1228" y="493" width="290" height="176" />
+        </mxCell>
+        <mxCell id="Repuesto-body-0-0" value="- codigo: String" vertex="1" parent="Repuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="45" width="270" height="22" />
+        </mxCell>
+        <mxCell id="Repuesto-body-0-1" value="- descripcion: String" vertex="1" parent="Repuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="67" width="270" height="22" />
+        </mxCell>
+        <mxCell id="Repuesto-body-0-2" value="- precioUnitario: BigDecimal" vertex="1" parent="Repuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="89" width="270" height="22" />
+        </mxCell>
+        <mxCell id="Repuesto-body-0-3" value="- stock: int" vertex="1" parent="Repuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="111" width="270" height="22" />
+        </mxCell>
+        <mxCell id="Repuesto-separator" value="" vertex="1" parent="Repuesto" style="fillColor=#c0cdd9;strokeColor=none;connectable=0;">
+          <mxGeometry as="geometry" x="0" y="140" width="290" height="1" />
+        </mxCell>
+        <mxCell id="Repuesto-body-1-0" value="+ verificarStock(cantidad: int): void" vertex="1" parent="Repuesto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="147" width="270" height="22" />
+        </mxCell>
+        <mxCell id="Especialidad" value="«enumeración»&#10;Especialidad" vertex="1" parent="1" style="swimlane;startSize=54;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e4f0eb;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="45" y="702" width="272" height="156" />
+        </mxCell>
+        <mxCell id="Especialidad-body-0-0" value="MOTOR" vertex="1" parent="Especialidad" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="61" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Especialidad-body-0-1" value="ELECTRICIDAD" vertex="1" parent="Especialidad" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="83" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Especialidad-body-0-2" value="FRENOS" vertex="1" parent="Especialidad" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="105" width="252" height="22" />
+        </mxCell>
+        <mxCell id="Especialidad-body-0-3" value="GENERAL" vertex="1" parent="Especialidad" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="127" width="252" height="22" />
+        </mxCell>
+        <mxCell id="StockInsuficienteException" value="«excepción»&#10;StockInsuficienteException" vertex="1" parent="1" style="swimlane;startSize=54;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#f8e8e6;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">
+          <mxGeometry as="geometry" x="837" y="782" width="332" height="90" />
+        </mxCell>
+        <mxCell id="StockInsuficienteException-body-0-0" value="+ StockInsuficienteException(mensaje: String)" vertex="1" parent="StockInsuficienteException" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=13;connectable=0;">
+          <mxGeometry as="geometry" x="11" y="61" width="312" height="22" />
+        </mxCell>
+        <mxCell id="edge-0" edge="1" parent="1" source="Vehiculo" target="Cliente" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=open;endSize=7;exitX=0.000000;exitY=0.515625;exitPerimeter=0;entryX=1.000000;entryY=0.598765;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="label-0-0" value="0..*" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="363" y="216" width="32" height="20" />
+        </mxCell>
+        <mxCell id="label-0-1" value="1" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="319" y="216" width="32" height="20" />
+        </mxCell>
+        <mxCell id="edge-1" edge="1" parent="1" source="Auto" target="Vehiculo" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=block;endFill=0;endSize=12;exitX=0.000000;exitY=0.537879;exitPerimeter=0;entryX=1.000000;entryY=0.203125;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-2" edge="1" parent="1" source="Moto" target="Vehiculo" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=block;endFill=0;endSize=12;exitX=0.000000;exitY=0.372727;exitPerimeter=0;entryX=1.000000;entryY=0.614583;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="800" y="330" />
+              <mxPoint x="800" y="258" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" edge="1" parent="1" source="OrdenTrabajo" target="Vehiculo" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=open;endSize=7;exitX=0.507042;exitY=0.000000;exitPerimeter=0;entryX=0.507042;entryY=1.000000;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="label-3-0" value="0..*" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="588" y="448" width="32" height="20" />
+        </mxCell>
+        <mxCell id="label-3-1" value="1" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="579" y="339" width="32" height="20" />
+        </mxCell>
+        <mxCell id="edge-4" edge="1" parent="1" source="OrdenTrabajo" target="Mecanico" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=open;endSize=7;exitX=0.000000;exitY=0.344697;exitPerimeter=0;entryX=1.000000;entryY=0.524691;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="label-4-0" value="0..*" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="363" y="541" width="32" height="20" />
+        </mxCell>
+        <mxCell id="label-4-1" value="1" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="319" y="541" width="32" height="20" />
+        </mxCell>
+        <mxCell id="edge-5" edge="1" parent="1" source="OrdenTrabajo" target="DetalleRepuesto" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=diamondThin;startFill=1;startSize=11;endArrow=open;endSize=7;exitX=1.000000;exitY=0.344697;exitPerimeter=0;entryX=0.000000;entryY=0.545455;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="label-5-0" value="1" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="764" y="541" width="32" height="20" />
+        </mxCell>
+        <mxCell id="label-5-1" value="0..*" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="798" y="541" width="32" height="20" />
+        </mxCell>
+        <mxCell id="edge-6" edge="1" parent="1" source="DetalleRepuesto" target="Repuesto" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=open;endSize=7;exitX=1.000000;exitY=0.545455;exitPerimeter=0;entryX=0.000000;entryY=0.409091;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="label-6-0" value="0..*" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="1172" y="541" width="32" height="20" />
+        </mxCell>
+        <mxCell id="label-6-1" value="1" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;align=center;fontSize=13;fontStyle=1;">
+          <mxGeometry as="geometry" x="1200" y="541" width="32" height="20" />
+        </mxCell>
+        <mxCell id="edge-7" edge="1" parent="1" source="OrdenTrabajo" target="StockInsuficienteException" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=open;endSize=7;dashed=1;exitX=1.000000;exitY=0.840909;exitPerimeter=0;entryX=0.000000;entryY=0.466667;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="801" y="696" />
+              <mxPoint x="801" y="824" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-8" edge="1" parent="1" source="Repuesto" target="StockInsuficienteException" style="strokeColor=#617892;strokeWidth=1.45;rounded=0;startArrow=none;endArrow=open;endSize=7;dashed=1;exitX=0.500000;exitY=1.000000;exitPerimeter=0;entryX=1.000000;entryY=0.466667;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1373" y="824" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note-0" value="El coeficiente de mano de obra se calcula en Auto o Moto. El detalle conserva el precio unitario aplicado al repuesto." vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=14;">
+          <mxGeometry as="geometry" x="46" y="906" width="1400" height="21" />
+        </mxCell>
+        <mxCell id="note-1" value="Al guardar una orden, JDBC registra la orden y su detalle y descuenta el stock dentro de una única transacción." vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=14;">
+          <mxGeometry as="geometry" x="46" y="929" width="1400" height="21" />
+        </mxCell>
+        <mxCell id="note-2" value="La orden avanza de pendiente a en reparación, luego a finalizada y finalmente a entregada." vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=14;">
+          <mxGeometry as="geometry" x="46" y="952" width="1400" height="21" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
