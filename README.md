@@ -9,6 +9,10 @@ Aplicación de escritorio para un taller mecánico. Trabajo práctico de Paradig
 3. Usar un JDK 17 o superior. El proyecto compila para Java 17 y Maven descarga el driver JDBC.
 4. Para comprobar la compilación, elegir **Build** en NetBeans o ejecutar `mvn -f proyecto/pom.xml package` desde la raíz si Maven está disponible en la terminal.
 
+## Ejecutar la aplicación
+
+Con la base configurada, seleccionar el proyecto Pistón Riojano y elegir **Run Project** en NetBeans. En la ventana principal, abrir **Clientes → Administrar clientes**. Para modificar o eliminar un cliente, seleccionar su fila en la grilla. Para iniciar un alta, pulsar **Nuevo**, completar los datos y pulsar **Guardar**.
+
 ## Estructura
 
 | Carpeta | Contenido |
