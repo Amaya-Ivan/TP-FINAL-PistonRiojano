@@ -20,4 +20,10 @@ Aplicación de escritorio para un taller mecánico. Trabajo práctico de Paradig
 | `proyecto/src/main/java/vista/` | Ventana MDI y formularios Swing. |
 | `proyecto/src/main/resources/` | Recursos de la aplicación. |
 
-Para preparar la base de desarrollo en PostgreSQL, crear una base vacía como `taller_piston_prueba`. Ejecutar `sql/schema.sql` y luego `sql/datos.sql` sobre esa misma base. Volver a ejecutar el esquema elimina los datos de esas tablas.
+Para preparar la base de desarrollo en PostgreSQL, crear una base vacía llamada `taller_piston`. Ejecutar `sql/schema.sql` y luego `sql/datos.sql` sobre esa misma base. Volver a ejecutar el esquema elimina los datos de esas tablas.
+
+## Configurar la conexión
+
+Copiar `proyecto/db.properties.example` como `proyecto/db.properties` y completar `db.usuario` y `db.password` con los datos locales. Modificar `db.url` si PostgreSQL está en otro puerto o equipo. Git ignora `db.properties`.
+
+La ruta predeterminada supone que Java se ejecuta desde la carpeta `proyecto`. Se puede indicar otra ruta con la opción de JVM `-Dpiston.db.config=ruta/al/db.properties`.
