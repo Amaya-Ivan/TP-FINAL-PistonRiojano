@@ -8,7 +8,7 @@
         <mxCell id="title" value="Pistón Riojano | Diagrama de clases UML" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=32;fontStyle=1;">
           <mxGeometry as="geometry" x="45" y="29" width="1080" height="45" />
         </mxCell>
-        <mxCell id="package" value="paradigmas.unlar.edu.ar.modelo" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=16;">
+        <mxCell id="package" value="Paquete Java: modelo" vertex="1" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontFamily=Segoe UI;fontColor=#182637;fontSize=16;">
           <mxGeometry as="geometry" x="46" y="76" width="650" height="23" />
         </mxCell>
         <mxCell id="Cliente" value="Cliente" vertex="1" parent="1" style="swimlane;startSize=38;html=0;whiteSpace=wrap;container=1;collapsible=0;fillColor=#e5eef8;swimlaneFillColor=#ffffff;strokeColor=#617892;strokeWidth=1.25;fontStyle=1;fontSize=17;fontFamily=Segoe UI;fontColor=#182637;">

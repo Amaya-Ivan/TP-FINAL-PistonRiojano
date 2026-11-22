@@ -1,0 +1,4 @@
+/proyecto/target/
+/proyecto/nbproject/private/
+/proyecto/db.properties
+/proyecto/src/main/resources/db.properties
