@@ -5,20 +5,14 @@ import dao.MecanicoDao;
 import dao.OrdenTrabajoDao;
 import dao.RepuestoDao;
 import dao.VehiculoDao;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.beans.PropertyVetoException;
-import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 
 public final class VentanaPrincipal extends JFrame {
     private static final long serialVersionUID = 1L;
 
-    private final JDesktopPane escritorio = new JDesktopPane();
     private ClientesFrame ventanaClientes;
     private VehiculosFrame ventanaVehiculos;
     private RepuestosFrame ventanaRepuestos;
@@ -26,40 +20,142 @@ public final class VentanaPrincipal extends JFrame {
     private ConsultaOrdenesFrame ventanaConsultaOrdenes;
 
     public VentanaPrincipal() {
-        super("Pistón Riojano");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        initComponents();
         setMinimumSize(new Dimension(680, 480));
         setSize(1050, 690);
         setLocationRelativeTo(null);
-        escritorio.setBackground(new Color(226, 231, 237));
-        setContentPane(escritorio);
-        setJMenuBar(crearMenu());
     }
 
-    private JMenuBar crearMenu() {
-        JMenuBar barra = new JMenuBar();
-        agregarMenu(barra, "Archivo", "Salir", this::dispose);
-        agregarMenu(barra, "Clientes", "Administrar clientes", this::abrirClientes);
-        agregarMenu(barra, "Vehículos", "Registrar y listar vehículos", this::abrirVehiculos);
-        agregarMenu(barra, "Repuestos", "Consultar y actualizar repuestos", this::abrirRepuestos);
-        JMenu ordenes = new JMenu("Órdenes");
-        agregarOpcion(ordenes, "Nueva orden de trabajo", this::abrirNuevaOrden);
-        agregarOpcion(ordenes, "Consultar órdenes", this::abrirConsultaOrdenes);
-        barra.add(ordenes);
-        return barra;
-    }
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-    private void agregarMenu(JMenuBar barra, String titulo, String texto, Runnable accion) {
-        JMenu menu = new JMenu(titulo);
-        agregarOpcion(menu, texto, accion);
-        barra.add(menu);
-    }
+        escritorio = new javax.swing.JDesktopPane();
+        barraMenu = new javax.swing.JMenuBar();
+        menuArchivo = new javax.swing.JMenu();
+        opcionSalir = new javax.swing.JMenuItem();
+        menuClientes = new javax.swing.JMenu();
+        opcionClientes = new javax.swing.JMenuItem();
+        menuVehiculos = new javax.swing.JMenu();
+        opcionVehiculos = new javax.swing.JMenuItem();
+        menuRepuestos = new javax.swing.JMenu();
+        opcionRepuestos = new javax.swing.JMenuItem();
+        menuOrdenes = new javax.swing.JMenu();
+        opcionNuevaOrden = new javax.swing.JMenuItem();
+        opcionConsultarOrdenes = new javax.swing.JMenuItem();
 
-    private void agregarOpcion(JMenu menu, String texto, Runnable accion) {
-        JMenuItem opcion = new JMenuItem(texto);
-        opcion.addActionListener(evento -> accion.run());
-        menu.add(opcion);
-    }
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pistón Riojano");
+
+        escritorio.setBackground(new java.awt.Color(226, 231, 237));
+        escritorio.setLayout(null);
+
+        menuArchivo.setText("Archivo");
+
+        opcionSalir.setText("Salir");
+        opcionSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionSalirActionPerformed(evt);
+            }
+        });
+        menuArchivo.add(opcionSalir);
+
+        barraMenu.add(menuArchivo);
+
+        menuClientes.setText("Clientes");
+
+        opcionClientes.setText("Administrar clientes");
+        opcionClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionClientesActionPerformed(evt);
+            }
+        });
+        menuClientes.add(opcionClientes);
+
+        barraMenu.add(menuClientes);
+
+        menuVehiculos.setText("Vehículos");
+
+        opcionVehiculos.setText("Registrar y listar vehículos");
+        opcionVehiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionVehiculosActionPerformed(evt);
+            }
+        });
+        menuVehiculos.add(opcionVehiculos);
+
+        barraMenu.add(menuVehiculos);
+
+        menuRepuestos.setText("Repuestos");
+
+        opcionRepuestos.setText("Consultar y actualizar repuestos");
+        opcionRepuestos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionRepuestosActionPerformed(evt);
+            }
+        });
+        menuRepuestos.add(opcionRepuestos);
+
+        barraMenu.add(menuRepuestos);
+
+        menuOrdenes.setText("Órdenes");
+
+        opcionNuevaOrden.setText("Nueva orden de trabajo");
+        opcionNuevaOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionNuevaOrdenActionPerformed(evt);
+            }
+        });
+        menuOrdenes.add(opcionNuevaOrden);
+
+        opcionConsultarOrdenes.setText("Consultar órdenes");
+        opcionConsultarOrdenes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionConsultarOrdenesActionPerformed(evt);
+            }
+        });
+        menuOrdenes.add(opcionConsultarOrdenes);
+
+        barraMenu.add(menuOrdenes);
+
+        setJMenuBar(barraMenu);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void opcionSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_opcionSalirActionPerformed
+
+    private void opcionClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionClientesActionPerformed
+        abrirClientes();
+    }//GEN-LAST:event_opcionClientesActionPerformed
+
+    private void opcionVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionVehiculosActionPerformed
+        abrirVehiculos();
+    }//GEN-LAST:event_opcionVehiculosActionPerformed
+
+    private void opcionRepuestosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionRepuestosActionPerformed
+        abrirRepuestos();
+    }//GEN-LAST:event_opcionRepuestosActionPerformed
+
+    private void opcionNuevaOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionNuevaOrdenActionPerformed
+        abrirNuevaOrden();
+    }//GEN-LAST:event_opcionNuevaOrdenActionPerformed
+
+    private void opcionConsultarOrdenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionConsultarOrdenesActionPerformed
+        abrirConsultaOrdenes();
+    }//GEN-LAST:event_opcionConsultarOrdenesActionPerformed
 
     private void abrirClientes() {
         if (ventanaClientes == null || ventanaClientes.isClosed()) {
@@ -117,4 +213,20 @@ public final class VentanaPrincipal extends JFrame {
             // Swing puede vetar un cambio de selección o el estado de minimizado.
         }
     }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenu menuArchivo;
+    private javax.swing.JMenu menuClientes;
+    private javax.swing.JMenu menuOrdenes;
+    private javax.swing.JMenu menuRepuestos;
+    private javax.swing.JMenu menuVehiculos;
+    private javax.swing.JMenuItem opcionClientes;
+    private javax.swing.JMenuItem opcionConsultarOrdenes;
+    private javax.swing.JMenuItem opcionNuevaOrden;
+    private javax.swing.JMenuItem opcionRepuestos;
+    private javax.swing.JMenuItem opcionSalir;
+    private javax.swing.JMenuItem opcionVehiculos;
+    // End of variables declaration//GEN-END:variables
 }

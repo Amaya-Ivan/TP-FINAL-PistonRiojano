@@ -1,23 +1,13 @@
 package vista;
 
 import dao.RepuestoDao;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.function.Consumer;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -28,58 +18,164 @@ public final class RepuestosFrame extends JInternalFrame {
 
     private final RepuestoDao repuestoDao;
     private final GrillaRepuesto grilla = new GrillaRepuesto();
-    private final JTable tabla = new JTable(grilla);
-    private final JTextField codigo = new JTextField();
-    private final JTextField descripcion = new JTextField();
-    private final JTextField precio = new JTextField();
-    private final JTextField stock = new JTextField();
-    private final JButton guardar = new JButton("Guardar cambios");
-    private final JButton actualizar = new JButton("Actualizar lista");
-    private final JLabel estado = new JLabel();
     private boolean ocupado;
 
     public RepuestosFrame(RepuestoDao repuestoDao) {
-        super("Repuestos", true, true, true, true);
         this.repuestoDao = repuestoDao;
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setContentPane(crearContenido());
+        initComponents();
+        tabla.setModel(grilla);
+        tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tabla.getColumnModel().getColumn(1).setPreferredWidth(290);
+        tabla.getColumnModel().getColumn(2).setPreferredWidth(135);
+        configurarImportes();
         tabla.getSelectionModel().addListSelectionListener(evento -> {
             if (!evento.getValueIsAdjusting() && !ocupado) {
                 cargarSeleccion();
             }
         });
-        guardar.addActionListener(evento -> guardarCambios());
-        actualizar.addActionListener(evento -> cargarRepuestos(codigo.getText()));
         cargarRepuestos("");
     }
 
-    private JPanel crearContenido() {
-        JPanel contenido = new JPanel(new BorderLayout(0, 12));
-        contenido.setBorder(BorderFactory.createEmptyBorder(14, 16, 12, 16));
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-        JPanel formulario = new JPanel(new BorderLayout(12, 0));
-        formulario.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("Repuesto seleccionado"),
-                BorderFactory.createEmptyBorder(4, 8, 8, 8)));
+        formulario = new javax.swing.JPanel();
+        etiquetaCodigo = new javax.swing.JLabel();
+        codigo = new javax.swing.JTextField();
+        etiquetaDescripcion = new javax.swing.JLabel();
+        descripcion = new javax.swing.JTextField();
+        etiquetaPrecio = new javax.swing.JLabel();
+        precio = new javax.swing.JTextField();
+        etiquetaStock = new javax.swing.JLabel();
+        stock = new javax.swing.JTextField();
+        lista = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        estado = new javax.swing.JLabel();
+        guardar = new javax.swing.JButton();
+        actualizar = new javax.swing.JButton();
+
+        setTitle("Repuestos");
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        formulario.setBorder(javax.swing.BorderFactory.createTitledBorder("Repuesto seleccionado"));
+        etiquetaCodigo.setText("Código");
+        etiquetaCodigo.setLabelFor(codigo);
         codigo.setColumns(10);
         codigo.setEditable(false);
+        etiquetaDescripcion.setText("Descripción");
+        etiquetaDescripcion.setLabelFor(descripcion);
         descripcion.setEditable(false);
-        JPanel valores = new JPanel(new GridLayout(1, 2, 10, 0));
-        valores.add(campo("Precio unitario", precio));
-        valores.add(campo("Stock", stock));
-        formulario.add(campo("Código", codigo), BorderLayout.WEST);
-        formulario.add(campo("Descripción", descripcion), BorderLayout.CENTER);
-        formulario.add(valores, BorderLayout.EAST);
+        etiquetaPrecio.setText("Precio unitario");
+        etiquetaPrecio.setLabelFor(precio);
         precio.setColumns(12);
+        etiquetaStock.setText("Stock");
+        etiquetaStock.setLabelFor(stock);
         stock.setColumns(8);
-        contenido.add(formulario, BorderLayout.NORTH);
-
-        tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tabla.setModel(new javax.swing.table.DefaultTableModel(new Object[0][0], new String[] {"Código", "Descripción", "Precio unitario", "Stock"}));
         tabla.setAutoCreateRowSorter(true);
         tabla.setFillsViewportHeight(true);
         tabla.setRowHeight(26);
-        tabla.getColumnModel().getColumn(1).setPreferredWidth(290);
-        tabla.getColumnModel().getColumn(2).setPreferredWidth(135);
+        guardar.setText("Guardar cambios");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
+        actualizar.setText("Actualizar lista");
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout formularioLayout = new javax.swing.GroupLayout(formulario);
+        formulario.setLayout(formularioLayout);
+        formularioLayout.setHorizontalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(formularioLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(codigo, 0, 100, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(descripcion, 0, 270, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(precio, 0, 120, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stock, 0, 80, Short.MAX_VALUE))
+            .addGap(8))
+        );
+        formularioLayout.setVerticalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(formularioLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8))
+        );
+        lista.setViewportView(tabla);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(16)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(formulario, 0, 720, Short.MAX_VALUE)
+                .addComponent(lista, 0, 720, Short.MAX_VALUE)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 12, Short.MAX_VALUE)
+                    .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(8)
+                    .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(16))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(14)
+            .addComponent(formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(8)
+            .addComponent(lista, 0, 260, Short.MAX_VALUE)
+            .addGap(8)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(14))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
+        guardarCambios();
+    }//GEN-LAST:event_guardarActionPerformed
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        cargarRepuestos(codigo.getText());
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void configurarImportes() {
         NumberFormat moneda = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-AR"));
         DefaultTableCellRenderer importe = new DefaultTableCellRenderer() {
             private static final long serialVersionUID = 1L;
@@ -91,25 +187,6 @@ public final class RepuestosFrame extends JInternalFrame {
         };
         importe.setHorizontalAlignment(SwingConstants.RIGHT);
         tabla.getColumnModel().getColumn(2).setCellRenderer(importe);
-        contenido.add(new JScrollPane(tabla), BorderLayout.CENTER);
-
-        JPanel pie = new JPanel(new BorderLayout());
-        pie.add(estado, BorderLayout.WEST);
-        JPanel acciones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
-        acciones.add(guardar);
-        acciones.add(actualizar);
-        pie.add(acciones, BorderLayout.EAST);
-        contenido.add(pie, BorderLayout.SOUTH);
-        return contenido;
-    }
-
-    private JPanel campo(String texto, JTextField entrada) {
-        JPanel panel = new JPanel(new BorderLayout(0, 4));
-        JLabel etiqueta = new JLabel(texto);
-        etiqueta.setLabelFor(entrada);
-        panel.add(etiqueta, BorderLayout.NORTH);
-        panel.add(entrada, BorderLayout.CENTER);
-        return panel;
     }
 
     private void cargarRepuestos(String codigoSeleccionado) {
@@ -204,4 +281,21 @@ public final class RepuestosFrame extends JInternalFrame {
             estado.setText(cantidad == 1 ? "1 repuesto" : cantidad + " repuestos");
         }
     }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar;
+    private javax.swing.JTextField codigo;
+    private javax.swing.JTextField descripcion;
+    private javax.swing.JLabel estado;
+    private javax.swing.JLabel etiquetaCodigo;
+    private javax.swing.JLabel etiquetaDescripcion;
+    private javax.swing.JLabel etiquetaPrecio;
+    private javax.swing.JLabel etiquetaStock;
+    private javax.swing.JPanel formulario;
+    private javax.swing.JButton guardar;
+    private javax.swing.JScrollPane lista;
+    private javax.swing.JTextField precio;
+    private javax.swing.JTextField stock;
+    private javax.swing.JTable tabla;
+    // End of variables declaration//GEN-END:variables
 }

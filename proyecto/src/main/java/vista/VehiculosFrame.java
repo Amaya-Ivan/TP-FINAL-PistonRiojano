@@ -2,27 +2,15 @@ package vista;
 
 import dao.ClienteDao;
 import dao.VehiculoDao;
-import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.function.Consumer;
-import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListCellRenderer;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import modelo.Auto;
 import modelo.Cliente;
 import modelo.Moto;
@@ -36,106 +24,299 @@ public final class VehiculosFrame extends JInternalFrame {
 
     private final ClienteDao clienteDao;
     private final VehiculoDao vehiculoDao;
-    private final JComboBox<Cliente> clientes = new JComboBox<>();
-    private final JComboBox<String> tipo = new JComboBox<>(new String[]{AUTO, MOTO});
-    private final JTextField patente = new JTextField();
-    private final JTextField marca = new JTextField();
-    private final JTextField modelo = new JTextField();
-    private final JTextField anio = new JTextField();
-    private final JTextField puertas = new JTextField();
-    private final JComboBox<TipoCombustible> combustible = new JComboBox<>(TipoCombustible.values());
-    private final JTextField cilindrada = new JTextField();
-    private final JPanel datosTipo = new JPanel(new CardLayout());
-    private final JButton actualizar = new JButton("Actualizar clientes");
-    private final JButton guardar = new JButton("Guardar vehículo");
     private final GrillaVehiculo grilla = new GrillaVehiculo();
-    private final JLabel estado = new JLabel();
     private boolean ocupado;
     private boolean cambiandoClientes;
 
     public VehiculosFrame(ClienteDao clienteDao, VehiculoDao vehiculoDao) {
-        super("Vehículos", true, true, true, true);
         this.clienteDao = clienteDao;
         this.vehiculoDao = vehiculoDao;
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setContentPane(crearContenido());
-        tipo.addActionListener(evento -> mostrarTipo());
-        clientes.addActionListener(evento -> {
-            if (!cambiandoClientes) {
-                limpiarFormulario();
-                cargarVehiculos();
-            }
-        });
-        actualizar.addActionListener(evento -> cargarClientes());
-        guardar.addActionListener(evento -> guardarVehiculo());
+        initComponents();
+        configurarClienteYCombustible();
+        tabla.setModel(grilla);
+        tabla.getColumnModel().getColumn(7).setPreferredWidth(105);
         cargarClientes();
     }
 
-    private JPanel crearContenido() {
-        JPanel contenido = new JPanel(new BorderLayout(0, 12));
-        contenido.setBorder(BorderFactory.createEmptyBorder(14, 16, 12, 16));
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
+        etiquetaClientes = new javax.swing.JLabel();
+        clientes = new javax.swing.JComboBox<>();
+        actualizar = new javax.swing.JButton();
+        formulario = new javax.swing.JPanel();
+        datosComunes = new javax.swing.JPanel();
+        etiquetaPatente = new javax.swing.JLabel();
+        patente = new javax.swing.JTextField();
+        etiquetaMarca = new javax.swing.JLabel();
+        marca = new javax.swing.JTextField();
+        etiquetaModelo = new javax.swing.JLabel();
+        modelo = new javax.swing.JTextField();
+        etiquetaAnio = new javax.swing.JLabel();
+        anio = new javax.swing.JTextField();
+        etiquetaTipo = new javax.swing.JLabel();
+        tipo = new javax.swing.JComboBox<>();
+        datosTipo = new javax.swing.JPanel();
+        camposAuto = new javax.swing.JPanel();
+        etiquetaPuertas = new javax.swing.JLabel();
+        puertas = new javax.swing.JTextField();
+        etiquetaCombustible = new javax.swing.JLabel();
+        combustible = new javax.swing.JComboBox<>();
+        camposMoto = new javax.swing.JPanel();
+        etiquetaCilindrada = new javax.swing.JLabel();
+        cilindrada = new javax.swing.JTextField();
+        lista = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        estado = new javax.swing.JLabel();
+        guardar = new javax.swing.JButton();
+
+        setTitle("Vehículos");
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        etiquetaClientes.setText("Cliente");
+        etiquetaClientes.setLabelFor(clientes);
+        clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientesActionPerformed(evt);
+            }
+        });
+        actualizar.setText("Actualizar clientes");
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
+        formulario.setBorder(javax.swing.BorderFactory.createTitledBorder("Registrar vehículo"));
+        etiquetaPatente.setText("Patente");
+        etiquetaPatente.setLabelFor(patente);
+        etiquetaMarca.setText("Marca");
+        etiquetaMarca.setLabelFor(marca);
+        etiquetaModelo.setText("Modelo");
+        etiquetaModelo.setLabelFor(modelo);
+        etiquetaAnio.setText("Año");
+        etiquetaAnio.setLabelFor(anio);
+        etiquetaTipo.setText("Tipo de vehículo");
+        etiquetaTipo.setLabelFor(tipo);
+        tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Auto", "Moto"}));
+        tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoActionPerformed(evt);
+            }
+        });
+        etiquetaPuertas.setText("Cantidad de puertas");
+        etiquetaPuertas.setLabelFor(puertas);
+        etiquetaCombustible.setText("Combustible");
+        etiquetaCombustible.setLabelFor(combustible);
+        etiquetaCilindrada.setText("Cilindrada (cc)");
+        etiquetaCilindrada.setLabelFor(cilindrada);
+        tabla.setModel(new javax.swing.table.DefaultTableModel(new Object[0][0], new String[] {"Patente", "Tipo", "Marca", "Modelo", "Año", "Puertas", "Combustible", "Cilindrada (cc)"}));
+        tabla.setAutoCreateRowSorter(true);
+        tabla.setFillsViewportHeight(true);
+        tabla.setRowHeight(26);
+        guardar.setText("Guardar vehículo");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout datosComunesLayout = new javax.swing.GroupLayout(datosComunes);
+        datosComunes.setLayout(datosComunesLayout);
+        datosComunesLayout.setHorizontalGroup(
+            datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(datosComunesLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(patente, 0, 155, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(marca, 0, 155, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(modelo, 0, 155, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(anio, 0, 155, Short.MAX_VALUE))
+            .addGap(8))
+        );
+        datosComunesLayout.setVerticalGroup(
+            datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(datosComunesLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(datosComunesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(patente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8))
+        );
+        datosTipo.setLayout(new java.awt.CardLayout());
+        datosTipo.add(camposAuto, "Auto");
+        javax.swing.GroupLayout camposAutoLayout = new javax.swing.GroupLayout(camposAuto);
+        camposAuto.setLayout(camposAutoLayout);
+        camposAutoLayout.setHorizontalGroup(
+            camposAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(camposAutoLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(camposAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(puertas, 0, 140, Short.MAX_VALUE))
+            .addGap(12)
+            .addGroup(camposAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(combustible, 0, 140, Short.MAX_VALUE))
+            .addGap(8))
+        );
+        camposAutoLayout.setVerticalGroup(
+            camposAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(camposAutoLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(camposAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(camposAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(puertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(combustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8))
+        );
+        datosTipo.add(camposMoto, "Moto");
+        javax.swing.GroupLayout camposMotoLayout = new javax.swing.GroupLayout(camposMoto);
+        camposMoto.setLayout(camposMotoLayout);
+        camposMotoLayout.setHorizontalGroup(
+            camposMotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(camposMotoLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(camposMotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(etiquetaCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cilindrada, 0, 295, Short.MAX_VALUE))
+            .addGap(8))
+        );
+        camposMotoLayout.setVerticalGroup(
+            camposMotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(camposMotoLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(camposMotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaCilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(camposMotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(cilindrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8))
+        );
+        javax.swing.GroupLayout formularioLayout = new javax.swing.GroupLayout(formulario);
+        formulario.setLayout(formularioLayout);
+        formularioLayout.setHorizontalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(formularioLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(datosComunes, 0, 700, Short.MAX_VALUE)
+                .addGroup(formularioLayout.createSequentialGroup()
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tipo, 0, 200, Short.MAX_VALUE))
+                    .addGap(12)
+                    .addComponent(datosTipo, 0, 420, Short.MAX_VALUE)))
+            .addGap(8))
+        );
+        formularioLayout.setVerticalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(formularioLayout.createSequentialGroup()
+            .addGap(4)
+            .addComponent(datosComunes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(formularioLayout.createSequentialGroup()
+                    .addGap(8)
+                    .addComponent(etiquetaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(8)
+                    .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(datosTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(4))
+        );
+        lista.setViewportView(tabla);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(16)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(etiquetaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10)
+                    .addComponent(clientes, 0, 400, Short.MAX_VALUE)
+                    .addGap(10)
+                    .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(formulario, 0, 720, Short.MAX_VALUE)
+                .addComponent(lista, 0, 720, Short.MAX_VALUE)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 12, Short.MAX_VALUE)
+                    .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(16))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(14)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addComponent(formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(8)
+            .addComponent(lista, 0, 260, Short.MAX_VALUE)
+            .addGap(8)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(14))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesActionPerformed
+        if (!cambiandoClientes) {
+            limpiarFormulario();
+            cargarVehiculos();
+        }
+    }//GEN-LAST:event_clientesActionPerformed
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        cargarClientes();
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoActionPerformed
+        mostrarTipo();
+    }//GEN-LAST:event_tipoActionPerformed
+
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
+        guardarVehiculo();
+    }//GEN-LAST:event_guardarActionPerformed
+
+    private void configurarClienteYCombustible() {
+        combustible.setModel(new DefaultComboBoxModel<>(TipoCombustible.values()));
         DefaultListCellRenderer renderizador = new DefaultListCellRenderer();
         clientes.setRenderer((lista, cliente, indice, seleccionado, foco) ->
                 renderizador.getListCellRendererComponent(lista, cliente == null ? "" :
                         cliente.getApellido() + ", " + cliente.getNombre() + " (" + cliente.getDni() + ")",
                         indice, seleccionado, foco));
-        JPanel titular = new JPanel(new BorderLayout(10, 0));
-        JLabel etiquetaCliente = new JLabel("Cliente");
-        etiquetaCliente.setLabelFor(clientes);
-        titular.add(etiquetaCliente, BorderLayout.WEST);
-        titular.add(clientes, BorderLayout.CENTER);
-        titular.add(actualizar, BorderLayout.EAST);
-
-        JPanel datosComunes = new JPanel(new GridLayout(1, 4, 10, 0));
-        datosComunes.add(campo("Patente", patente));
-        datosComunes.add(campo("Marca", marca));
-        datosComunes.add(campo("Modelo", modelo));
-        datosComunes.add(campo("Año", anio));
-        JPanel camposAuto = new JPanel(new GridLayout(1, 2, 10, 0));
-        camposAuto.add(campo("Cantidad de puertas", puertas));
-        camposAuto.add(campo("Combustible", combustible));
-        datosTipo.add(camposAuto, AUTO);
-        datosTipo.add(campo("Cilindrada (cc)", cilindrada), MOTO);
-
-        JPanel filaTipo = new JPanel(new GridLayout(1, 2, 10, 0));
-        filaTipo.add(campo("Tipo de vehículo", tipo));
-        filaTipo.add(datosTipo);
-        JPanel formulario = new JPanel(new GridLayout(2, 1, 0, 9));
-        formulario.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("Registrar vehículo"),
-                BorderFactory.createEmptyBorder(4, 8, 8, 8)));
-        formulario.add(datosComunes);
-        formulario.add(filaTipo);
-
-        JPanel encabezado = new JPanel(new BorderLayout(0, 10));
-        encabezado.add(titular, BorderLayout.NORTH);
-        encabezado.add(formulario, BorderLayout.CENTER);
-        contenido.add(encabezado, BorderLayout.NORTH);
-
-        JTable tabla = new JTable(grilla);
-        tabla.setAutoCreateRowSorter(true);
-        tabla.setFillsViewportHeight(true);
-        tabla.setRowHeight(26);
-        tabla.getColumnModel().getColumn(7).setPreferredWidth(105);
-        contenido.add(new JScrollPane(tabla), BorderLayout.CENTER);
-
-        JPanel pie = new JPanel(new BorderLayout());
-        pie.add(estado, BorderLayout.WEST);
-        JPanel acciones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
-        acciones.add(guardar);
-        pie.add(acciones, BorderLayout.EAST);
-        contenido.add(pie, BorderLayout.SOUTH);
-        return contenido;
-    }
-
-    private JPanel campo(String texto, JComponent entrada) {
-        JPanel panel = new JPanel(new BorderLayout(0, 4));
-        JLabel etiqueta = new JLabel(texto);
-        etiqueta.setLabelFor(entrada);
-        panel.add(etiqueta, BorderLayout.NORTH);
-        panel.add(entrada, BorderLayout.CENTER);
-        return panel;
     }
 
     private void cargarClientes() {
@@ -263,4 +444,35 @@ public final class VehiculosFrame extends JInternalFrame {
                     : "No hay clientes disponibles");
         }
     }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar;
+    private javax.swing.JTextField anio;
+    private javax.swing.JPanel camposAuto;
+    private javax.swing.JPanel camposMoto;
+    private javax.swing.JTextField cilindrada;
+    private javax.swing.JComboBox<Cliente> clientes;
+    private javax.swing.JComboBox<TipoCombustible> combustible;
+    private javax.swing.JPanel datosComunes;
+    private javax.swing.JPanel datosTipo;
+    private javax.swing.JLabel estado;
+    private javax.swing.JLabel etiquetaAnio;
+    private javax.swing.JLabel etiquetaCilindrada;
+    private javax.swing.JLabel etiquetaClientes;
+    private javax.swing.JLabel etiquetaCombustible;
+    private javax.swing.JLabel etiquetaMarca;
+    private javax.swing.JLabel etiquetaModelo;
+    private javax.swing.JLabel etiquetaPatente;
+    private javax.swing.JLabel etiquetaPuertas;
+    private javax.swing.JLabel etiquetaTipo;
+    private javax.swing.JPanel formulario;
+    private javax.swing.JButton guardar;
+    private javax.swing.JScrollPane lista;
+    private javax.swing.JTextField marca;
+    private javax.swing.JTextField modelo;
+    private javax.swing.JTextField patente;
+    private javax.swing.JTextField puertas;
+    private javax.swing.JTable tabla;
+    private javax.swing.JComboBox<String> tipo;
+    // End of variables declaration//GEN-END:variables
 }

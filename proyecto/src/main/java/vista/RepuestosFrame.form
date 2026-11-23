@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="title" type="java.lang.String" value="Repuestos" />
+    <Property name="closable" type="boolean" value="true" />
+    <Property name="iconifiable" type="boolean" value="true" />
+    <Property name="maximizable" type="boolean" value="true" />
+    <Property name="resizable" type="boolean" value="true" />
+    <Property name="defaultCloseOperation" type="int" value="2" />
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1" />
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true" />
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1" />
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2" />
+  </AuxValues>
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" attributes="0" groupAlignment="0">
+        <Group type="102" attributes="0">
+          <EmptySpace min="-2" pref="16" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Component id="formulario" min="0" max="32767" attributes="0" pref="720" />
+            <Component id="lista" min="0" max="32767" attributes="0" pref="720" />
+            <Group type="102" attributes="0">
+              <Component id="estado" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="0" pref="12" max="32767" attributes="0" />
+              <Component id="guardar" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Component id="actualizar" min="-2" max="-2" attributes="0" />
+            </Group>
+          </Group>
+          <EmptySpace min="-2" pref="16" max="-2" attributes="0" />
+        </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" attributes="0" groupAlignment="0">
+        <Group type="102" attributes="0">
+          <EmptySpace min="-2" pref="14" max="-2" attributes="0" />
+          <Component id="formulario" min="-2" max="-2" attributes="0" />
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Component id="lista" min="0" max="32767" attributes="0" pref="260" />
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="3">
+            <Component id="estado" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="guardar" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="actualizar" min="-2" max="-2" attributes="0" alignment="3" />
+          </Group>
+          <EmptySpace min="-2" pref="14" max="-2" attributes="0" />
+        </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="formulario">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Repuesto seleccionado" />
+          </Border>
+        </Property>
+      </Properties>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Component id="etiquetaCodigo" min="-2" max="-2" attributes="0" />
+                <Component id="codigo" min="0" max="32767" attributes="0" pref="100" />
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Component id="etiquetaDescripcion" min="-2" max="-2" attributes="0" />
+                <Component id="descripcion" min="0" max="32767" attributes="0" pref="270" />
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Component id="etiquetaPrecio" min="-2" max="-2" attributes="0" />
+                <Component id="precio" min="0" max="32767" attributes="0" pref="120" />
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Component id="etiquetaStock" min="-2" max="-2" attributes="0" />
+                <Component id="stock" min="0" max="32767" attributes="0" pref="80" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="3">
+                <Component id="etiquetaCodigo" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="etiquetaDescripcion" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="etiquetaPrecio" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="etiquetaStock" min="-2" max="-2" attributes="0" alignment="3" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="3">
+                <Component id="codigo" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="descripcion" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="precio" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="stock" min="-2" max="-2" attributes="0" alignment="3" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="etiquetaCodigo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Código" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="codigo" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="codigo">
+          <Properties>
+            <Property name="columns" type="int" value="10" />
+            <Property name="editable" type="boolean" value="false" />
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaDescripcion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Descripción" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="descripcion" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="descripcion">
+          <Properties>
+            <Property name="editable" type="boolean" value="false" />
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaPrecio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Precio unitario" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="precio" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="precio">
+          <Properties>
+            <Property name="columns" type="int" value="12" />
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaStock">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Stock" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="stock" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="stock">
+          <Properties>
+            <Property name="columns" type="int" value="8" />
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="lista">
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout" />
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tabla">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="4" rowCount="0">
+                <Column editable="false" title="Código" type="java.lang.Object" />
+                <Column editable="false" title="Descripción" type="java.lang.Object" />
+                <Column editable="false" title="Precio unitario" type="java.lang.Object" />
+                <Column editable="false" title="Stock" type="java.lang.Object" />
+              </Table>
+            </Property>
+            <Property name="autoCreateRowSorter" type="boolean" value="true" />
+            <Property name="fillsViewportHeight" type="boolean" value="true" />
+            <Property name="rowHeight" type="int" value="26" />
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="estado" />
+    <Component class="javax.swing.JButton" name="guardar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guardar cambios" />
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarActionPerformed" />
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="actualizar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Actualizar lista" />
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarActionPerformed" />
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

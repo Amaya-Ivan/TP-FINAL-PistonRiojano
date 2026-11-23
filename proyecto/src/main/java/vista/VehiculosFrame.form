@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="title" type="java.lang.String" value="Vehículos" />
+    <Property name="closable" type="boolean" value="true" />
+    <Property name="iconifiable" type="boolean" value="true" />
+    <Property name="maximizable" type="boolean" value="true" />
+    <Property name="resizable" type="boolean" value="true" />
+    <Property name="defaultCloseOperation" type="int" value="2" />
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1" />
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true" />
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1" />
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2" />
+  </AuxValues>
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" attributes="0" groupAlignment="0">
+        <Group type="102" attributes="0">
+          <EmptySpace min="-2" pref="16" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <Component id="etiquetaClientes" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0" />
+              <Component id="clientes" min="0" max="32767" attributes="0" pref="400" />
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0" />
+              <Component id="actualizar" min="-2" max="-2" attributes="0" />
+            </Group>
+            <Component id="formulario" min="0" max="32767" attributes="0" pref="720" />
+            <Component id="lista" min="0" max="32767" attributes="0" pref="720" />
+            <Group type="102" attributes="0">
+              <Component id="estado" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="0" pref="12" max="32767" attributes="0" />
+              <Component id="guardar" min="-2" max="-2" attributes="0" />
+            </Group>
+          </Group>
+          <EmptySpace min="-2" pref="16" max="-2" attributes="0" />
+        </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" attributes="0" groupAlignment="0">
+        <Group type="102" attributes="0">
+          <EmptySpace min="-2" pref="14" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="3">
+            <Component id="etiquetaClientes" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="clientes" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="actualizar" min="-2" max="-2" attributes="0" alignment="3" />
+          </Group>
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Component id="formulario" min="-2" max="-2" attributes="0" />
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Component id="lista" min="0" max="32767" attributes="0" pref="260" />
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="3">
+            <Component id="estado" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="guardar" min="-2" max="-2" attributes="0" alignment="3" />
+          </Group>
+          <EmptySpace min="-2" pref="14" max="-2" attributes="0" />
+        </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="etiquetaClientes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cliente" />
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="clientes" />
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="clientes">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Cliente&gt;" />
+      </AuxValues>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clientesActionPerformed" />
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="actualizar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Actualizar clientes" />
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarActionPerformed" />
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="formulario">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Registrar vehículo" />
+          </Border>
+        </Property>
+      </Properties>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Component id="datosComunes" min="0" max="32767" attributes="0" pref="700" />
+                <Group type="102" attributes="0">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaTipo" min="-2" max="-2" attributes="0" />
+                    <Component id="tipo" min="0" max="32767" attributes="0" pref="200" />
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                  <Component id="datosTipo" min="0" max="32767" attributes="0" pref="420" />
+                </Group>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0" />
+              <Component id="datosComunes" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Component id="etiquetaTipo" min="-2" max="-2" attributes="0" />
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Component id="tipo" min="-2" max="-2" attributes="0" />
+                </Group>
+                <Component id="datosTipo" min="-2" max="-2" attributes="0" />
+              </Group>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="datosComunes">
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaPatente" min="-2" max="-2" attributes="0" />
+                    <Component id="patente" min="0" max="32767" attributes="0" pref="155" />
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaMarca" min="-2" max="-2" attributes="0" />
+                    <Component id="marca" min="0" max="32767" attributes="0" pref="155" />
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaModelo" min="-2" max="-2" attributes="0" />
+                    <Component id="modelo" min="0" max="32767" attributes="0" pref="155" />
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaAnio" min="-2" max="-2" attributes="0" />
+                    <Component id="anio" min="0" max="32767" attributes="0" pref="155" />
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="3">
+                    <Component id="etiquetaPatente" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="etiquetaMarca" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="etiquetaModelo" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="etiquetaAnio" min="-2" max="-2" attributes="0" alignment="3" />
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="3">
+                    <Component id="patente" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="marca" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="modelo" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="anio" min="-2" max="-2" attributes="0" alignment="3" />
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="etiquetaPatente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Patente" />
+                <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="patente" />
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="patente" />
+            <Component class="javax.swing.JLabel" name="etiquetaMarca">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Marca" />
+                <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="marca" />
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="marca" />
+            <Component class="javax.swing.JLabel" name="etiquetaModelo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modelo" />
+                <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="modelo" />
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="modelo" />
+            <Component class="javax.swing.JLabel" name="etiquetaAnio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Año" />
+                <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="anio" />
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="anio" />
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="etiquetaTipo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de vehículo" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="tipo" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="tipo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Auto" />
+                <StringItem index="1" value="Moto" />
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;" />
+          </AuxValues>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoActionPerformed" />
+          </Events>
+        </Component>
+        <Container class="javax.swing.JPanel" name="datosTipo">
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" />
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="camposAuto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="Auto" />
+                </Constraint>
+              </Constraints>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="0">
+                        <Component id="etiquetaPuertas" min="-2" max="-2" attributes="0" />
+                        <Component id="puertas" min="0" max="32767" attributes="0" pref="140" />
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="0">
+                        <Component id="etiquetaCombustible" min="-2" max="-2" attributes="0" />
+                        <Component id="combustible" min="0" max="32767" attributes="0" pref="140" />
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                    </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="3">
+                        <Component id="etiquetaPuertas" min="-2" max="-2" attributes="0" alignment="3" />
+                        <Component id="etiquetaCombustible" min="-2" max="-2" attributes="0" alignment="3" />
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="3">
+                        <Component id="puertas" min="-2" max="-2" attributes="0" alignment="3" />
+                        <Component id="combustible" min="-2" max="-2" attributes="0" alignment="3" />
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                    </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="etiquetaPuertas">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cantidad de puertas" />
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="puertas" />
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="puertas" />
+                <Component class="javax.swing.JLabel" name="etiquetaCombustible">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Combustible" />
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="combustible" />
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="combustible">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;TipoCombustible&gt;" />
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="camposMoto">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="Moto" />
+                </Constraint>
+              </Constraints>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="0">
+                        <Component id="etiquetaCilindrada" min="-2" max="-2" attributes="0" />
+                        <Component id="cilindrada" min="0" max="32767" attributes="0" pref="295" />
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                    </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="3">
+                        <Component id="etiquetaCilindrada" min="-2" max="-2" attributes="0" alignment="3" />
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                      <Group type="103" attributes="0" groupAlignment="3">
+                        <Component id="cilindrada" min="-2" max="-2" attributes="0" alignment="3" />
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                    </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="etiquetaCilindrada">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cilindrada (cc)" />
+                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="cilindrada" />
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="cilindrada" />
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="lista">
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout" />
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tabla">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="8" rowCount="0">
+                <Column editable="false" title="Patente" type="java.lang.Object" />
+            <Column editable="false" title="Tipo" type="java.lang.Object" />
+                <Column editable="false" title="Marca" type="java.lang.Object" />
+                <Column editable="false" title="Modelo" type="java.lang.Object" />
+                <Column editable="false" title="Año" type="java.lang.Object" />
+                    <Column editable="false" title="Puertas" type="java.lang.Object" />
+                <Column editable="false" title="Combustible" type="java.lang.Object" />
+                <Column editable="false" title="Cilindrada (cc)" type="java.lang.Object" />
+              </Table>
+            </Property>
+            <Property name="autoCreateRowSorter" type="boolean" value="true" />
+            <Property name="fillsViewportHeight" type="boolean" value="true" />
+            <Property name="rowHeight" type="int" value="26" />
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="estado" />
+    <Component class="javax.swing.JButton" name="guardar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guardar vehículo" />
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarActionPerformed" />
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
