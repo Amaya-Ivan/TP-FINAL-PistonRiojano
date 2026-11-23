@@ -1,7 +1,6 @@
 package vista;
 
 import dao.OrdenTrabajoDao;
-import java.awt.BorderLayout;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -12,14 +11,7 @@ import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -32,25 +24,17 @@ public final class ConsultaOrdenesFrame extends JInternalFrame {
 
     private final OrdenTrabajoDao ordenDao;
     private final GrillaOrdenTrabajo grilla = new GrillaOrdenTrabajo();
-    private final JTable tabla = new JTable(grilla);
-    private final JComboBox<FiltroEstado> filtro = new JComboBox<>();
-    private final JButton actualizar = new JButton("Actualizar lista");
-    private final JButton avanzar = new JButton("Avanzar estado");
-    private final JLabel estado = new JLabel(" ");
     private boolean ocupado;
 
     public ConsultaOrdenesFrame(OrdenTrabajoDao ordenDao) {
-        super("Consultar órdenes", true, true, true, true);
         this.ordenDao = ordenDao;
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        initComponents();
         filtro.addItem(new FiltroEstado(null));
         for (EstadoOrden opcion : EstadoOrden.values()) {
             filtro.addItem(new FiltroEstado(opcion));
         }
-        setContentPane(crearContenido());
+        configurarTabla();
         filtro.addActionListener(evento -> recargar());
-        actualizar.addActionListener(evento -> recargar());
-        avanzar.addActionListener(evento -> avanzarEstado());
         tabla.getSelectionModel().addListSelectionListener(evento -> {
             if (!evento.getValueIsAdjusting()) {
                 actualizarControles();
@@ -59,24 +43,95 @@ public final class ConsultaOrdenesFrame extends JInternalFrame {
         recargar();
     }
 
-    private JPanel crearContenido() {
-        JPanel contenido = new JPanel(new BorderLayout(0, 12));
-        contenido.setBorder(BorderFactory.createEmptyBorder(14, 16, 12, 16));
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-        JLabel etiqueta = new JLabel("Estado");
-        etiqueta.setLabelFor(filtro);
-        JPanel campoFiltro = new JPanel(new BorderLayout(10, 0));
-        campoFiltro.add(etiqueta, BorderLayout.WEST);
-        campoFiltro.add(filtro, BorderLayout.CENTER);
-        JPanel encabezado = new JPanel(new BorderLayout());
-        encabezado.add(campoFiltro, BorderLayout.WEST);
-        encabezado.add(actualizar, BorderLayout.EAST);
-        contenido.add(encabezado, BorderLayout.NORTH);
+        etiquetaFiltro = new javax.swing.JLabel();
+        filtro = new javax.swing.JComboBox<>();
+        actualizar = new javax.swing.JButton();
+        lista = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        estado = new javax.swing.JLabel();
+        avanzar = new javax.swing.JButton();
 
-        tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        setTitle("Consultar órdenes");
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        etiquetaFiltro.setText("Estado");
+        etiquetaFiltro.setLabelFor(filtro);
+        actualizar.setText("Actualizar lista");
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
+        tabla.setModel(new javax.swing.table.DefaultTableModel(new Object[0][0], new String[] {"N.º de orden", "Fecha", "Patente", "Mecánico", "Estado", "Total"}));
         tabla.setAutoCreateRowSorter(true);
         tabla.setFillsViewportHeight(true);
         tabla.setRowHeight(26);
+        estado.setText(" ");
+        avanzar.setText("Avanzar estado");
+        avanzar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avanzarActionPerformed(evt);
+            }
+        });
+
+        lista.setViewportView(tabla);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(16)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(etiquetaFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(10)
+                    .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 16, Short.MAX_VALUE)
+                    .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lista, 0, 720, Short.MAX_VALUE)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 12, Short.MAX_VALUE)
+                    .addComponent(avanzar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(16))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(14)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addComponent(lista, 0, 260, Short.MAX_VALUE)
+            .addGap(8)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(avanzar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(14))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        recargar();
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void avanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avanzarActionPerformed
+        avanzarEstado();
+    }//GEN-LAST:event_avanzarActionPerformed
+
+    private void configurarTabla() {
+        tabla.setModel(grilla);
+        tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tabla.getColumnModel().getColumn(3).setPreferredWidth(185);
         tabla.getColumnModel().getColumn(4).setPreferredWidth(126);
         tabla.getColumnModel().getColumn(5).setPreferredWidth(120);
@@ -86,15 +141,7 @@ public final class ConsultaOrdenesFrame extends JInternalFrame {
                 renderizar(valor -> nombreEstado((EstadoOrden) valor), SwingConstants.LEFT));
         NumberFormat moneda = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-AR"));
         tabla.setDefaultRenderer(BigDecimal.class, renderizar(moneda::format, SwingConstants.RIGHT));
-        JScrollPane scroll = new JScrollPane(tabla);
-        scroll.setColumnHeaderView(tabla.getTableHeader());
-        contenido.add(scroll, BorderLayout.CENTER);
-
-        JPanel pie = new JPanel(new BorderLayout(10, 0));
-        pie.add(estado, BorderLayout.CENTER);
-        pie.add(avanzar, BorderLayout.EAST);
-        contenido.add(pie, BorderLayout.SOUTH);
-        return contenido;
+        lista.setColumnHeaderView(tabla.getTableHeader());
     }
 
     private DefaultTableCellRenderer renderizar(Function<Object, String> formato, int alineacion) {
@@ -201,4 +248,14 @@ public final class ConsultaOrdenesFrame extends JInternalFrame {
             return estado == null ? "Todos" : nombreEstado(estado);
         }
     }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar;
+    private javax.swing.JButton avanzar;
+    private javax.swing.JLabel estado;
+    private javax.swing.JLabel etiquetaFiltro;
+    private javax.swing.JComboBox<FiltroEstado> filtro;
+    private javax.swing.JScrollPane lista;
+    private javax.swing.JTable tabla;
+    // End of variables declaration//GEN-END:variables
 }

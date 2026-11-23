@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="title" type="java.lang.String" value="Nueva orden de trabajo" />
+    <Property name="closable" type="boolean" value="true" />
+    <Property name="iconifiable" type="boolean" value="true" />
+    <Property name="maximizable" type="boolean" value="true" />
+    <Property name="resizable" type="boolean" value="true" />
+    <Property name="defaultCloseOperation" type="int" value="2" />
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1" />
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true" />
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1" />
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2" />
+  </AuxValues>
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" attributes="0" groupAlignment="0">
+        <Group type="102" attributes="0">
+          <EmptySpace min="-2" pref="16" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Component id="formulario" min="0" max="32767" attributes="0" pref="740" />
+            <Component id="panelRepuestos" min="0" max="32767" attributes="0" pref="740" />
+            <Group type="102" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0" />
+              <Component id="etiquetaManoDeObra" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Component id="manoDeObra" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Component id="etiquetaImporteRepuestos" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Component id="importeRepuestos" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Component id="etiquetaTotal" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+              <Component id="total" min="-2" max="-2" attributes="0" />
+            </Group>
+            <Group type="102" attributes="0">
+              <Component id="estado" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="0" pref="12" max="32767" attributes="0" />
+              <Component id="actualizar" min="-2" max="-2" attributes="0" />
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Component id="guardar" min="-2" max="-2" attributes="0" />
+            </Group>
+          </Group>
+          <EmptySpace min="-2" pref="16" max="-2" attributes="0" />
+        </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" attributes="0" groupAlignment="0">
+        <Group type="102" attributes="0">
+          <EmptySpace min="-2" pref="14" max="-2" attributes="0" />
+          <Component id="formulario" min="-2" max="-2" attributes="0" />
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Component id="panelRepuestos" min="0" max="32767" attributes="0" pref="230" />
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="3">
+            <Component id="etiquetaManoDeObra" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="manoDeObra" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="etiquetaImporteRepuestos" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="importeRepuestos" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="etiquetaTotal" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="total" min="-2" max="-2" attributes="0" alignment="3" />
+          </Group>
+          <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+          <Group type="103" attributes="0" groupAlignment="3">
+            <Component id="estado" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="actualizar" min="-2" max="-2" attributes="0" alignment="3" />
+            <Component id="guardar" min="-2" max="-2" attributes="0" alignment="3" />
+          </Group>
+          <EmptySpace min="-2" pref="14" max="-2" attributes="0" />
+        </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="formulario">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Datos de la orden" />
+          </Border>
+        </Property>
+      </Properties>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Group type="102" attributes="0">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaVehiculos" min="-2" max="-2" attributes="0" />
+                    <Component id="vehiculos" min="0" max="32767" attributes="0" pref="340" />
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaMecanicos" min="-2" max="-2" attributes="0" />
+                    <Component id="mecanicos" min="0" max="32767" attributes="0" pref="335" />
+                  </Group>
+                </Group>
+                <Group type="102" attributes="0">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaProblema" min="-2" max="-2" attributes="0" />
+                    <Component id="descripcion" min="0" max="32767" attributes="0" pref="460" />
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0" />
+                  <Group type="102" attributes="0">
+                    <Group type="103" attributes="0" groupAlignment="0">
+                      <Component id="etiquetaFecha" min="-2" max="-2" attributes="0" />
+                      <Component id="etiquetaHoras" min="-2" max="-2" attributes="0" />
+                    </Group>
+                    <EmptySpace min="-2" pref="10" max="-2" attributes="0" />
+                    <Group type="103" attributes="0" groupAlignment="0">
+                      <Component id="fecha" min="-2" max="-2" attributes="0" />
+                      <Component id="horas" min="0" max="32767" attributes="0" pref="88" />
+                    </Group>
+                  </Group>
+                </Group>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="3">
+                <Component id="etiquetaVehiculos" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="etiquetaMecanicos" min="-2" max="-2" attributes="0" alignment="3" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="3">
+                <Component id="vehiculos" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="mecanicos" min="-2" max="-2" attributes="0" alignment="3" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Group type="102" attributes="0">
+                  <Component id="etiquetaProblema" min="-2" max="-2" attributes="0" />
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0" />
+                  <Component id="descripcion" min="-2" max="-2" attributes="0" pref="56" />
+                </Group>
+                <Group type="102" attributes="0">
+                  <Group type="103" attributes="0" groupAlignment="3">
+                    <Component id="etiquetaFecha" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="fecha" min="-2" max="-2" attributes="0" alignment="3" />
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="3">
+                    <Component id="etiquetaHoras" min="-2" max="-2" attributes="0" alignment="3" />
+                    <Component id="horas" min="-2" max="-2" attributes="0" alignment="3" />
+                  </Group>
+                </Group>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="etiquetaVehiculos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vehículo" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="vehiculos" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="vehiculos">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Vehiculo&gt;" />
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaMecanicos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mecánico responsable" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="mecanicos" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="mecanicos">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Mecanico&gt;" />
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaProblema">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Descripción del problema" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="problema" />
+            </Property>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="descripcion">
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout" />
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="problema">
+              <Properties>
+                <Property name="rows" type="int" value="2" />
+                <Property name="columns" type="int" value="30" />
+                <Property name="lineWrap" type="boolean" value="true" />
+                <Property name="wrapStyleWord" type="boolean" value="true" />
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="etiquetaFecha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha de ingreso" />
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="fecha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="—" />
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaHoras">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Horas de mano de obra" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="horas" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="horas">
+          <Properties>
+            <Property name="columns" type="int" value="8" />
+            <Property name="text" type="java.lang.String" value="0" />
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="panelRepuestos">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Repuestos de la orden" />
+          </Border>
+        </Property>
+      </Properties>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="0">
+                <Group type="102" attributes="0">
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaRepuestos" min="-2" max="-2" attributes="0" />
+                    <Component id="repuestos" min="0" max="32767" attributes="0" pref="380" />
+                  </Group>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0" />
+                  <Group type="103" attributes="0" groupAlignment="0">
+                    <Component id="etiquetaCantidad" min="-2" max="-2" attributes="0" />
+                    <Component id="cantidad" min="-2" max="-2" attributes="0" />
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Component id="agregar" min="-2" max="-2" attributes="0" />
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+                  <Component id="quitar" min="-2" max="-2" attributes="0" />
+                </Group>
+                <Component id="lista" min="0" max="32767" attributes="0" pref="700" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" attributes="0" groupAlignment="0">
+            <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="3">
+                <Component id="etiquetaRepuestos" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="etiquetaCantidad" min="-2" max="-2" attributes="0" alignment="3" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Group type="103" attributes="0" groupAlignment="3">
+                <Component id="repuestos" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="cantidad" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="agregar" min="-2" max="-2" attributes="0" alignment="3" />
+                <Component id="quitar" min="-2" max="-2" attributes="0" alignment="3" />
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+              <Component id="lista" min="0" max="32767" attributes="0" pref="142" />
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0" />
+            </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="etiquetaRepuestos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Repuesto" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="repuestos" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="repuestos">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Repuesto&gt;" />
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiquetaCantidad">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cantidad" />
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="cantidad" />
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="cantidad">
+          <Properties>
+            <Property name="columns" type="int" value="8" />
+            <Property name="text" type="java.lang.String" value="1" />
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="agregar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agregar" />
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarActionPerformed" />
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="quitar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Quitar seleccionado" />
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitarActionPerformed" />
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="lista">
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout" />
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="tabla">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="4" rowCount="0">
+                    <Column editable="false" title="Repuesto" type="java.lang.Object" />
+                    <Column editable="false" title="Cantidad" type="java.lang.Object" />
+                    <Column editable="false" title="Precio unitario" type="java.lang.Object" />
+                    <Column editable="false" title="Subtotal" type="java.lang.Object" />
+                  </Table>
+                </Property>
+                <Property name="autoCreateRowSorter" type="boolean" value="true" />
+                <Property name="fillsViewportHeight" type="boolean" value="true" />
+                <Property name="rowHeight" type="int" value="25" />
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="etiquetaManoDeObra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mano de obra" />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="manoDeObra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="—" />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiquetaImporteRepuestos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repuestos" />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="importeRepuestos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="—" />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiquetaTotal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total" />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="total">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="—" />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="estado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" " />
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="actualizar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Actualizar listas" />
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarActionPerformed" />
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="guardar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guardar orden" />
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guardarActionPerformed" />
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

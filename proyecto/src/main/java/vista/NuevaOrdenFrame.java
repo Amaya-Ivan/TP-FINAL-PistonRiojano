@@ -4,10 +4,7 @@ import dao.MecanicoDao;
 import dao.OrdenTrabajoDao;
 import dao.RepuestoDao;
 import dao.VehiculoDao;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -18,20 +15,11 @@ import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListCellRenderer;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JComponent;
 import javax.swing.JInternalFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.event.DocumentEvent;
@@ -53,92 +41,303 @@ public final class NuevaOrdenFrame extends JInternalFrame {
     private final MecanicoDao mecanicoDao;
     private final RepuestoDao repuestoDao;
     private final OrdenTrabajoDao ordenDao;
-    private final JComboBox<Vehiculo> vehiculos = new JComboBox<>();
-    private final JComboBox<Mecanico> mecanicos = new JComboBox<>();
-    private final JComboBox<Repuesto> repuestos = new JComboBox<>();
-    private final JTextArea problema = new JTextArea(2, 30);
-    private final JTextField horas = new JTextField("0", 8);
-    private final JTextField cantidad = new JTextField("1", 8);
-    private final JLabel fecha = new JLabel();
-    private final JLabel manoDeObra = new JLabel("—");
-    private final JLabel importeRepuestos = new JLabel();
-    private final JLabel total = new JLabel("—");
-    private final JLabel estado = new JLabel(" ");
     private final GrillaDetalleOrden grilla = new GrillaDetalleOrden();
-    private final JTable tabla = new JTable(grilla);
-    private final JButton actualizar = new JButton("Actualizar listas");
-    private final JButton agregar = new JButton("Agregar");
-    private final JButton quitar = new JButton("Quitar seleccionado");
-    private final JButton guardar = new JButton("Guardar orden");
     private final NumberFormat moneda = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("es-AR"));
     private LocalDate fechaIngreso = LocalDate.now();
     private boolean ocupado;
 
     public NuevaOrdenFrame(VehiculoDao vehiculoDao, MecanicoDao mecanicoDao,
                             RepuestoDao repuestoDao, OrdenTrabajoDao ordenDao) {
-        super("Nueva orden de trabajo", true, true, true, true);
         this.vehiculoDao = vehiculoDao;
         this.mecanicoDao = mecanicoDao;
         this.repuestoDao = repuestoDao;
         this.ordenDao = ordenDao;
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setContentPane(crearContenido());
+        initComponents();
+        configurarContenido();
         configurarEventos();
         actualizarTotales();
         cargarListas(null);
     }
 
-    private JPanel crearContenido() {
-        JPanel contenido = new JPanel(new BorderLayout(0, 12));
-        contenido.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
-        contenido.add(crearFormulario(), BorderLayout.NORTH);
-        contenido.add(crearPanelRepuestos(), BorderLayout.CENTER);
-        contenido.add(crearPie(), BorderLayout.SOUTH);
-        return contenido;
-    }
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-    private JPanel crearFormulario() {
+        formulario = new javax.swing.JPanel();
+        etiquetaVehiculos = new javax.swing.JLabel();
+        vehiculos = new javax.swing.JComboBox<>();
+        etiquetaMecanicos = new javax.swing.JLabel();
+        mecanicos = new javax.swing.JComboBox<>();
+        etiquetaProblema = new javax.swing.JLabel();
+        descripcion = new javax.swing.JScrollPane();
+        problema = new javax.swing.JTextArea();
+        etiquetaFecha = new javax.swing.JLabel();
+        fecha = new javax.swing.JLabel();
+        etiquetaHoras = new javax.swing.JLabel();
+        horas = new javax.swing.JTextField();
+        panelRepuestos = new javax.swing.JPanel();
+        etiquetaRepuestos = new javax.swing.JLabel();
+        repuestos = new javax.swing.JComboBox<>();
+        etiquetaCantidad = new javax.swing.JLabel();
+        cantidad = new javax.swing.JTextField();
+        agregar = new javax.swing.JButton();
+        quitar = new javax.swing.JButton();
+        lista = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        etiquetaManoDeObra = new javax.swing.JLabel();
+        manoDeObra = new javax.swing.JLabel();
+        etiquetaImporteRepuestos = new javax.swing.JLabel();
+        importeRepuestos = new javax.swing.JLabel();
+        etiquetaTotal = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
+        estado = new javax.swing.JLabel();
+        actualizar = new javax.swing.JButton();
+        guardar = new javax.swing.JButton();
+
+        setTitle("Nueva orden de trabajo");
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        formulario.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos de la orden"));
+        etiquetaVehiculos.setText("Vehículo");
+        etiquetaVehiculos.setLabelFor(vehiculos);
+        etiquetaMecanicos.setText("Mecánico responsable");
+        etiquetaMecanicos.setLabelFor(mecanicos);
+        etiquetaProblema.setText("Descripción del problema");
+        problema.setRows(2);
+        problema.setColumns(30);
+        problema.setLineWrap(true);
+        problema.setWrapStyleWord(true);
+        etiquetaProblema.setLabelFor(problema);
+        etiquetaFecha.setText("Fecha de ingreso");
+        fecha.setText("—");
+        etiquetaHoras.setText("Horas de mano de obra");
+        etiquetaHoras.setLabelFor(horas);
+        horas.setColumns(8);
+        horas.setText("0");
+        panelRepuestos.setBorder(javax.swing.BorderFactory.createTitledBorder("Repuestos de la orden"));
+        etiquetaRepuestos.setText("Repuesto");
+        etiquetaRepuestos.setLabelFor(repuestos);
+        etiquetaCantidad.setText("Cantidad");
+        etiquetaCantidad.setLabelFor(cantidad);
+        cantidad.setColumns(8);
+        cantidad.setText("1");
+        agregar.setText("Agregar");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarActionPerformed(evt);
+            }
+        });
+        quitar.setText("Quitar seleccionado");
+        quitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitarActionPerformed(evt);
+            }
+        });
+        tabla.setModel(new javax.swing.table.DefaultTableModel(new Object[0][0], new String[] {"Repuesto", "Cantidad", "Precio unitario", "Subtotal"}));
+        tabla.setAutoCreateRowSorter(true);
+        tabla.setFillsViewportHeight(true);
+        tabla.setRowHeight(25);
+        etiquetaManoDeObra.setText("Mano de obra");
+        manoDeObra.setText("—");
+        etiquetaImporteRepuestos.setText("Repuestos");
+        importeRepuestos.setText("—");
+        etiquetaTotal.setText("Total");
+        total.setText("—");
+        estado.setText(" ");
+        actualizar.setText("Actualizar listas");
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
+        guardar.setText("Guardar orden");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
+
+        descripcion.setViewportView(problema);
+        javax.swing.GroupLayout formularioLayout = new javax.swing.GroupLayout(formulario);
+        formulario.setLayout(formularioLayout);
+        formularioLayout.setHorizontalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(formularioLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(formularioLayout.createSequentialGroup()
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vehiculos, 0, 340, Short.MAX_VALUE))
+                    .addGap(12)
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaMecanicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mecanicos, 0, 335, Short.MAX_VALUE)))
+                .addGroup(formularioLayout.createSequentialGroup()
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(descripcion, 0, 460, Short.MAX_VALUE))
+                    .addGap(12)
+                    .addGroup(formularioLayout.createSequentialGroup()
+                        .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etiquetaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etiquetaHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10)
+                        .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(horas, 0, 88, Short.MAX_VALUE)))))
+            .addGap(8))
+        );
+        formularioLayout.setVerticalGroup(
+            formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(formularioLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaVehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaMecanicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(vehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mecanicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(formularioLayout.createSequentialGroup()
+                    .addComponent(etiquetaProblema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(6)
+                    .addComponent(descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(formularioLayout.createSequentialGroup()
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(etiquetaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(8)
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(etiquetaHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(horas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGap(8))
+        );
+        lista.setViewportView(tabla);
+        javax.swing.GroupLayout panelRepuestosLayout = new javax.swing.GroupLayout(panelRepuestos);
+        panelRepuestos.setLayout(panelRepuestosLayout);
+        panelRepuestosLayout.setHorizontalGroup(
+            panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(panelRepuestosLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelRepuestosLayout.createSequentialGroup()
+                    .addGroup(panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(repuestos, 0, 380, Short.MAX_VALUE))
+                    .addGap(10)
+                    .addGroup(panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(etiquetaCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(8)
+                    .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(8)
+                    .addComponent(quitar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lista, 0, 700, Short.MAX_VALUE))
+            .addGap(8))
+        );
+        panelRepuestosLayout.setVerticalGroup(
+            panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(panelRepuestosLayout.createSequentialGroup()
+            .addGap(8)
+            .addGroup(panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(panelRepuestosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(repuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(quitar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addComponent(lista, 0, 142, Short.MAX_VALUE)
+            .addGap(8))
+        );
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(16)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(formulario, 0, 740, Short.MAX_VALUE)
+                .addComponent(panelRepuestos, 0, 740, Short.MAX_VALUE)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(etiquetaManoDeObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(12)
+                    .addComponent(manoDeObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(12)
+                    .addComponent(etiquetaImporteRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(12)
+                    .addComponent(importeRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(12)
+                    .addComponent(etiquetaTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(12)
+                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 12, Short.MAX_VALUE)
+                    .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(8)
+                    .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(16))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addGap(14)
+            .addComponent(formulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(8)
+            .addComponent(panelRepuestos, 0, 230, Short.MAX_VALUE)
+            .addGap(8)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(etiquetaManoDeObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(manoDeObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaImporteRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(importeRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(etiquetaTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(8)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(14))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+        agregarRepuesto();
+    }//GEN-LAST:event_agregarActionPerformed
+
+    private void quitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitarActionPerformed
+        quitarRepuesto();
+    }//GEN-LAST:event_quitarActionPerformed
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        cargarListas(null);
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
+        guardarOrden();
+    }//GEN-LAST:event_guardarActionPerformed
+
+    private void configurarContenido() {
         configurarCombo(vehiculos, v -> v.getPatente() + " · " + v.getMarca() + " " + v.getModelo()
                 + " · " + v.getCliente().getApellido());
         configurarCombo(mecanicos, m -> m.getApellido() + ", " + m.getNombre() + " (" + m.getLegajo() + ")");
-        JPanel seleccion = new JPanel(new GridLayout(1, 2, 12, 0));
-        seleccion.add(campo("Vehículo", vehiculos));
-        seleccion.add(campo("Mecánico responsable", mecanicos));
-
-        problema.setLineWrap(true);
-        problema.setWrapStyleWord(true);
-        JPanel datos = new JPanel(new BorderLayout(10, 0));
-        datos.add(campo("Descripción del problema", new JScrollPane(problema)), BorderLayout.CENTER);
-        JPanel horario = new JPanel(new GridLayout(2, 2, 8, 5));
+        configurarCombo(repuestos, r -> r.getCodigo() + " · " + r.getDescripcion() + " · Stock " + r.getStock());
         fecha.setText(FORMATO_FECHA.format(fechaIngreso));
-        horario.add(new JLabel("Fecha de ingreso"));
-        horario.add(fecha);
-        JLabel etiquetaHoras = new JLabel("Horas de mano de obra");
-        etiquetaHoras.setLabelFor(horas);
-        horario.add(etiquetaHoras);
-        horario.add(horas);
-        datos.add(horario, BorderLayout.EAST);
-
-        JPanel formulario = new JPanel(new BorderLayout(0, 9));
-        formulario.setBorder(bordeSeccion("Datos de la orden"));
-        formulario.add(seleccion, BorderLayout.NORTH);
-        formulario.add(datos, BorderLayout.CENTER);
-        return formulario;
-    }
-
-    private JPanel crearPanelRepuestos() {
-        configurarCombo(repuestos, r -> r.getCodigo() + " · " + r.getDescripcion()
-                + " · Stock " + r.getStock());
-        JPanel agregarRepuesto = new JPanel(new BorderLayout(10, 0));
-        agregarRepuesto.add(campo("Repuesto", repuestos), BorderLayout.CENTER);
-        JPanel acciones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 7, 0));
-        acciones.add(campo("Cantidad", cantidad));
-        acciones.add(agregar);
-        acciones.add(quitar);
-        agregarRepuesto.add(acciones, BorderLayout.EAST);
-
-        tabla.setRowHeight(25);
-        tabla.setFillsViewportHeight(true);
+        etiquetaTotal.setFont(etiquetaTotal.getFont().deriveFont(Font.BOLD));
+        total.setFont(total.getFont().deriveFont(Font.BOLD, 17f));
+        tabla.setModel(grilla);
         tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tabla.getColumnModel().getColumn(0).setPreferredWidth(340);
         tabla.getColumnModel().getColumn(1).setPreferredWidth(75);
@@ -152,53 +351,7 @@ public final class NuevaOrdenFrame extends JInternalFrame {
         };
         importe.setHorizontalAlignment(SwingConstants.RIGHT);
         tabla.setDefaultRenderer(BigDecimal.class, importe);
-        JScrollPane scroll = new JScrollPane(tabla);
-        scroll.setColumnHeaderView(tabla.getTableHeader());
-
-        JPanel panel = new JPanel(new BorderLayout(0, 8));
-        panel.setBorder(bordeSeccion("Repuestos de la orden"));
-        panel.add(agregarRepuesto, BorderLayout.NORTH);
-        panel.add(scroll, BorderLayout.CENTER);
-        return panel;
-    }
-
-    private JPanel crearPie() {
-        JPanel resumen = new JPanel(new FlowLayout(FlowLayout.RIGHT, 12, 0));
-        resumen.add(new JLabel("Mano de obra"));
-        resumen.add(manoDeObra);
-        resumen.add(new JLabel("Repuestos"));
-        resumen.add(importeRepuestos);
-        JLabel etiquetaTotal = new JLabel("Total");
-        etiquetaTotal.setFont(etiquetaTotal.getFont().deriveFont(Font.BOLD));
-        total.setFont(total.getFont().deriveFont(Font.BOLD, 17f));
-        resumen.add(etiquetaTotal);
-        resumen.add(total);
-
-        JPanel botones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
-        botones.add(actualizar);
-        botones.add(guardar);
-        JPanel acciones = new JPanel(new BorderLayout(8, 0));
-        acciones.add(estado, BorderLayout.CENTER);
-        acciones.add(botones, BorderLayout.EAST);
-
-        JPanel pie = new JPanel(new BorderLayout(0, 8));
-        pie.add(resumen, BorderLayout.NORTH);
-        pie.add(acciones, BorderLayout.SOUTH);
-        return pie;
-    }
-
-    private javax.swing.border.Border bordeSeccion(String titulo) {
-        return BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(titulo),
-                BorderFactory.createEmptyBorder(3, 8, 7, 8));
-    }
-
-    private JPanel campo(String titulo, JComponent entrada) {
-        JPanel panel = new JPanel(new BorderLayout(0, 3));
-        JLabel etiqueta = new JLabel(titulo);
-        etiqueta.setLabelFor(entrada);
-        panel.add(etiqueta, BorderLayout.NORTH);
-        panel.add(entrada, BorderLayout.CENTER);
-        return panel;
+        lista.setColumnHeaderView(tabla.getTableHeader());
     }
 
     private <T> void configurarCombo(JComboBox<T> combo, Function<T, String> mostrar) {
@@ -230,10 +383,6 @@ public final class NuevaOrdenFrame extends JInternalFrame {
         problema.getDocument().addDocumentListener(cambios);
         horas.getDocument().addDocumentListener(cambios);
         tabla.getSelectionModel().addListSelectionListener(evento -> actualizarControles());
-        actualizar.addActionListener(evento -> cargarListas(null));
-        agregar.addActionListener(evento -> agregarRepuesto());
-        quitar.addActionListener(evento -> quitarRepuesto());
-        guardar.addActionListener(evento -> guardarOrden());
     }
 
     private void cargarListas(String mensajeFinal) {
@@ -409,4 +558,37 @@ public final class NuevaOrdenFrame extends JInternalFrame {
 
     private record ListasOrden(List<Vehiculo> vehiculos, List<Mecanico> mecanicos, List<Repuesto> repuestos) {
     }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar;
+    private javax.swing.JButton agregar;
+    private javax.swing.JTextField cantidad;
+    private javax.swing.JScrollPane descripcion;
+    private javax.swing.JLabel estado;
+    private javax.swing.JLabel etiquetaCantidad;
+    private javax.swing.JLabel etiquetaFecha;
+    private javax.swing.JLabel etiquetaHoras;
+    private javax.swing.JLabel etiquetaImporteRepuestos;
+    private javax.swing.JLabel etiquetaManoDeObra;
+    private javax.swing.JLabel etiquetaMecanicos;
+    private javax.swing.JLabel etiquetaProblema;
+    private javax.swing.JLabel etiquetaRepuestos;
+    private javax.swing.JLabel etiquetaTotal;
+    private javax.swing.JLabel etiquetaVehiculos;
+    private javax.swing.JLabel fecha;
+    private javax.swing.JPanel formulario;
+    private javax.swing.JButton guardar;
+    private javax.swing.JTextField horas;
+    private javax.swing.JLabel importeRepuestos;
+    private javax.swing.JScrollPane lista;
+    private javax.swing.JLabel manoDeObra;
+    private javax.swing.JComboBox<Mecanico> mecanicos;
+    private javax.swing.JPanel panelRepuestos;
+    private javax.swing.JTextArea problema;
+    private javax.swing.JButton quitar;
+    private javax.swing.JComboBox<Repuesto> repuestos;
+    private javax.swing.JTable tabla;
+    private javax.swing.JLabel total;
+    private javax.swing.JComboBox<Vehiculo> vehiculos;
+    // End of variables declaration//GEN-END:variables
 }
