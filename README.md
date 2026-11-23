@@ -13,6 +13,10 @@ Aplicación de escritorio para un taller mecánico. Trabajo práctico de Paradig
 
 Con la base configurada, seleccionar el proyecto Pistón Riojano y elegir **Run Project** en NetBeans. En la ventana principal, abrir **Clientes → Administrar clientes**. Para modificar o eliminar un cliente, seleccionar su fila en la grilla. Para iniciar un alta, pulsar **Nuevo**, completar los datos y pulsar **Guardar**.
 
+En **Órdenes → Nueva orden de trabajo**, seleccionar el vehículo y el mecánico, cargar las horas y la descripción, y agregar los repuestos necesarios. El formulario muestra el total antes de guardar y confirma el número asignado por PostgreSQL.
+
+En **Órdenes → Consultar órdenes**, se puede filtrar por estado y avanzar la orden seleccionada al siguiente estado permitido.
+
 ## Estructura
 
 | Carpeta | Contenido |

@@ -1,6 +1,8 @@
 package vista;
 
 import dao.ClienteDao;
+import dao.MecanicoDao;
+import dao.OrdenTrabajoDao;
 import dao.RepuestoDao;
 import dao.VehiculoDao;
 import java.awt.Color;
@@ -20,6 +22,8 @@ public final class VentanaPrincipal extends JFrame {
     private ClientesFrame ventanaClientes;
     private VehiculosFrame ventanaVehiculos;
     private RepuestosFrame ventanaRepuestos;
+    private NuevaOrdenFrame ventanaNuevaOrden;
+    private ConsultaOrdenesFrame ventanaConsultaOrdenes;
 
     public VentanaPrincipal() {
         super("Pistón Riojano");
@@ -38,15 +42,23 @@ public final class VentanaPrincipal extends JFrame {
         agregarMenu(barra, "Clientes", "Administrar clientes", this::abrirClientes);
         agregarMenu(barra, "Vehículos", "Registrar y listar vehículos", this::abrirVehiculos);
         agregarMenu(barra, "Repuestos", "Consultar y actualizar repuestos", this::abrirRepuestos);
+        JMenu ordenes = new JMenu("Órdenes");
+        agregarOpcion(ordenes, "Nueva orden de trabajo", this::abrirNuevaOrden);
+        agregarOpcion(ordenes, "Consultar órdenes", this::abrirConsultaOrdenes);
+        barra.add(ordenes);
         return barra;
     }
 
     private void agregarMenu(JMenuBar barra, String titulo, String texto, Runnable accion) {
         JMenu menu = new JMenu(titulo);
+        agregarOpcion(menu, texto, accion);
+        barra.add(menu);
+    }
+
+    private void agregarOpcion(JMenu menu, String texto, Runnable accion) {
         JMenuItem opcion = new JMenuItem(texto);
         opcion.addActionListener(evento -> accion.run());
         menu.add(opcion);
-        barra.add(menu);
     }
 
     private void abrirClientes() {
@@ -68,6 +80,23 @@ public final class VentanaPrincipal extends JFrame {
             ventanaRepuestos = new RepuestosFrame(new RepuestoDao());
         }
         mostrar(ventanaRepuestos, 850, 540);
+    }
+
+    private void abrirNuevaOrden() {
+        if (ventanaNuevaOrden == null || ventanaNuevaOrden.isClosed()) {
+            ventanaNuevaOrden = new NuevaOrdenFrame(
+                    new VehiculoDao(), new MecanicoDao(), new RepuestoDao(), new OrdenTrabajoDao());
+        }
+        mostrar(ventanaNuevaOrden, 970, 600);
+    }
+
+    private void abrirConsultaOrdenes() {
+        if (ventanaConsultaOrdenes == null || ventanaConsultaOrdenes.isClosed()) {
+            ventanaConsultaOrdenes = new ConsultaOrdenesFrame(new OrdenTrabajoDao());
+        } else {
+            ventanaConsultaOrdenes.recargar();
+        }
+        mostrar(ventanaConsultaOrdenes, 900, 540);
     }
 
     private void mostrar(JInternalFrame ventana, int ancho, int alto) {
